@@ -1,0 +1,515 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+#background {
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-top: 3%;
+  height: 800px;
+  width: 1400px;
+  background-image: url("background.png");
+  position: relative;
+}
+
+#player {
+  height: 48px;
+  width: 48px;
+  background-image: url("player.png");
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#loding {
+  font-size: 100pt;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.monster {
+  height: 48px;
+  width: 48px;
+  background-image: url("monster.png");
+  background-position-x: 528px;
+  background-position-y: 336px;
+  position: absolute;
+}
+
+#HPbar {
+  font-size: 12pt;
+  height: 20px;
+  width: 400px;
+  border: 3px solid black;
+  background-color: red;
+  color: white;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+
+#HPbarback {
+  font-size: 12pt;
+  height: 20px;
+  width: 400px;
+  border: 3px solid black;
+  background-color: black;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+}
+
+#MPbar {
+  font-size: 12pt;
+  height: 20px;
+  width: 300px;
+  border: 3px solid black;
+  background-color: #0062ff;
+  color: white;
+  position: absolute;
+  top: 24px;
+  left: 0px;
+  z-index: 1;
+}
+
+#MPbarback {
+  font-size: 12pt;
+  height: 20px;
+  width: 300px;
+  border: 3px solid black;
+  background-color: black;
+  position: absolute;
+  top: 24px;
+  left: 0px;
+  z-index: 0;
+}
+
+#XPlevel {
+  font-size: 30pt;
+  height: 50px;
+  width: 50px;
+  border: 3px solid black;
+  background-color: #00b3ff;
+  color: white;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 1344px;
+  z-index: 1;
+}
+
+#XPbarback {
+  font-size: 12pt;
+  height: 30px;
+  width: 200px;
+  border: 3px solid black;
+  background-color: black;
+  position: absolute;
+  top: 0px;
+  left: 1144px;
+  z-index: 0;
+}
+
+#XPbar {
+  font-size: 20pt;
+  height: 30px;
+  width: 0px;
+  border: 3px solid black;
+  background-color: #00b3ff;
+  color: white;
+  position: absolute;
+  top: 0px;
+  left: 1144px;
+  z-index: 1;
+}
+
+#coinimg {
+  position: absolute;
+  top: 50px;
+  left: 0px;
+}
+
+#coin {
+  font-size: 25pt;
+  color: yellow;
+  position: absolute;
+  top: 50px;
+  left: 37px;
+}
+
+#dialogbox {
+  font-size: 25pt;
+  height: 250px;
+  width: 800px;
+  color: white;
+  background-color: #787878;
+  border: 5px solid black;
+  position: absolute;
+  top: 500px;
+  left: 300px;
+}
+
+#dialogboxEnd {
+  width: 0px;
+  height: 0px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 18px solid white;
+  position: absolute;
+  top: 725px;
+  left: 1050px;
+}
+
+#backpack {
+  height: 700px;
+  width: 1300px;
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 4;
+}
+
+#equipment {
+  height: 700px;
+  width: 400px;
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  z-index: 5;
+}
+
+.inventory_ {
+  height: 75px;
+  width: 75px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  margin: 10px 0px 0px 10px;
+  z-index: 6;
+}
+
+#filter {
+  height: 50px;
+  width: 400px;
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: -5px;
+  left: 395px;
+  z-index: 6;
+}
+
+#filterButton {
+  height: 60px;
+  width: 60px;
+  background-repeat: no-repeat;
+  background-position: 3px 5px;
+  background-size: 80% 80%;
+  background-image: url("filterButton.png");
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: -5px;
+  left: 210px;
+  z-index: 7;
+}
+
+#apply {
+  height: 60px;
+  width: 145px;
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: -5px;
+  left: 260px;
+  font-size: 25pt;
+  text-align: center;
+  font-weight: bold;
+  z-index: 7;
+}
+
+#order {
+  height: 60px;
+  width: 220px;
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  font-size: 20pt;
+  font-weight: bold;
+  z-index: 7;
+}
+
+#inventory {
+  height: 640px;
+  width: 400px;
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: 50px;
+  left: 395px;
+  z-index: 6;
+}
+
+#attribute {
+  height: 700px;
+  width: 500px;
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: -5px;
+  left: 795px;
+  z-index: 5;
+}
+
+#packbackPlayer {
+  height: 218px;
+  width: 176px;
+  background-image: url("player1.png");
+  position: absolute;
+  top: 100px;
+  left: 112px;
+  z-index: 5;
+}
+
+#packbackArmorHelmet {
+  height: 75px;
+  width: 75px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("packbackArmorHelmet.png");
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+}
+
+#packbackArmorChestplate {
+  height: 75px;
+  width: 75px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("packbackArmorChestplate.png");
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: 20px;
+  left: 295px;
+  z-index: 5;
+}
+
+#packbackArmorLeggings {
+  height: 75px;
+  width: 75px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("packbackArmorLeggings.png");
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: 320px;
+  left: 20px;
+  z-index: 5;
+}
+
+#packbackArmorBoots {
+  height: 75px;
+  width: 75px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("packbackArmorBoots.png");
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: 320px;
+  left: 295px;
+  z-index: 5;
+}
+
+#packbackPlayerSkill1 {
+  height: 75px;
+  width: 75px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("packbackPlayerSkill.png");
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: 450px;
+  left: 36.25px;
+  z-index: 5;
+}
+
+#packbackPlayerSkill2 {
+  height: 75px;
+  width: 75px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("packbackPlayerSkill.png");
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: 450px;
+  left: 157.5px;
+  z-index: 5;
+}
+
+#packbackPlayerSkill3 {
+  height: 75px;
+  width: 75px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("packbackPlayerSkill.png");
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: 450px;
+  left: 278.75px;
+  z-index: 5;
+}
+
+#packbackPlayerWeapon1 {
+  height: 75px;
+  width: 75px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("packbackPlayerWeapon.png");
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: 575px;
+  left: 36.25px;
+  z-index: 5;
+}
+
+#packbackPlayerWeapon2 {
+  height: 75px;
+  width: 75px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("packbackPlayerWeapon.png");
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: 575px;
+  left: 157.5px;
+  z-index: 5;
+}
+
+#packbackPlayerFood {
+  height: 75px;
+  width: 75px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("packbackPlayerFood.png");
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: 575px;
+  left: 278.75px;
+  z-index: 5;
+}
+
+#packbackSelectItemData {
+  height: 150px;
+  width: 420px;
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: 165px;
+  left: 40px;
+  font-size: 15pt;
+  z-index: 5;
+}
+
+#packbackSelectItemName {
+  height: 25px;
+  width: 350px;
+  background-color: #bfbfbf;
+  position: absolute;
+  top: 30px;
+  left: 145px;
+  font-size: 25pt;
+  font-weight: bold;
+  z-index: 5;
+}
+
+#packbackSelectItemIntroduction {
+  height: 75px;
+  width: 350px;
+  background-color: #bfbfbf;
+  position: absolute;
+  top: 75px;
+  left: 145px;
+  font-size: 12pt;
+  z-index: 5;
+}
+
+#packbackSelectItem {
+  height: 75px;
+  width: 75px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 5;
+}
+
+#packbackSelectItemDressup {
+  height: 75px;
+  width: 130px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  text-align: center;
+  background-color: #bfbfbf;
+  border: 5px solid black;
+  position: absolute;
+  top: 575px;
+  left: 320px;
+  font-size: 40pt;
+  font-weight: bold;
+  z-index: 5;
+}
+
+#rebornButton {
+  height: 50px;
+  width: 80px;
+  font-size: 30pt;
+  background-color: white;
+  border: 5px solid black;
+  position: absolute;
+  top: 625px;
+  left: 950px;
+}
+
+.overflow-auto {
+  overflow: auto !important;
+}

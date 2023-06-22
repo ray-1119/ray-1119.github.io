@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>RPG game</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="player1attack.png" rel="preload" as="image">
+  <link href="player1.png" rel="preload" as="image">
+</head>
+
+<body onload="init()">
+  <div id="background" onkeydown="keydown(event);" onkeyup="keyup(event)" tabindex="0">
+    <div id="player"></div>
+    <div id="loding">載入中...</div>
+    <div id="HPbar">HP:100/100</div>
+    <div id="HPbarback"></div>
+    <div id="MPbar">MP:80/80</div>
+    <div id="MPbarback"></div>
+    <div id="XPlevel">1</div>
+    <div id="XPbarback"></div>
+    <div id="XPbar">XP:0/10</div>
+    <img id="coinimg" src="coin.png"></img>
+    <div id="coin">0</div>
+    <div id="backpack" style="display:none;">
+      <div id="equipment">
+        <div id="packbackPlayer"></div>
+        <div id="packbackArmorHelmet" onclick='check("ArmorHelmet","packbackArmorHelmet")'></div>
+        <div id="packbackArmorChestplate" onclick='check("ArmorChestplate","packbackArmorChestplate")'></div>
+        <div id="packbackArmorLeggings" onclick='check("ArmorLeggings","packbackArmorLeggings")'></div>
+        <div id="packbackArmorBoots" onclick='check("ArmorBoots","packbackArmorBoots")'></div>
+        <div id="packbackPlayerSkill1" onclick='check("skill","packbackPlayerSkill1",1)'></div>
+        <div id="packbackPlayerSkill2" onclick='check("skill","packbackPlayerSkill2",2)'></div>
+        <div id="packbackPlayerSkill3" onclick='check("skill","packbackPlayerSkill3",3)'></div>
+        <div id="packbackPlayerWeapon1" onclick='check("Equipment","packbackPlayerWeapon1",1)'></div>
+        <div id="packbackPlayerWeapon2" onclick='check("Equipment","packbackPlayerWeapon2",2)'></div>
+        <div id="packbackPlayerFood" onclick='check("Food","packbackPlayerFood")'></div>
+      </div>
+      <div id="filter">
+        <select id="order">
+          <option>名稱:A~Z</option>
+          <option>名稱:Z~A</option>
+          <option>獲得時間:新~舊</option>
+          <option>獲得時間:舊~新</option>
+          <option>裝備等級:高~低</option>
+          <option>裝備等級:低~高</option>
+          <option>裝備星數:高~低</option>
+          <option>裝備星數:低~高</option>
+          <option>裝備型態:種類</option>
+        </select>
+        <button id="filterButton"></button>
+        <button id="apply">套用</button>
+      </div>
+      <div id="attribute">
+        <div id="packbackSelectItem"></div>
+        <div id="packbackSelectItemName"></div>
+        <div id="packbackSelectItemIntroduction" class="overflow-auto"></div>
+        <div id="packbackSelectItemData"></div>
+        <div id="packbackSelectItemDressup" onclick="ItemDressup()">裝備</div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
