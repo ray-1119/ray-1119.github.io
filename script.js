@@ -324,6 +324,7 @@ function goToAttackover() {
   attackdamage = 0;
 }
 function init() {
+  talk("首先，因為時間問題，遊戲尚未完成，所以教學就先這樣子用文字教學，w和向上鍵:向上移動，a和向左鍵:向左移動，s和下上鍵 : 向下移動，d和向右鍵:向右移動，空白鍵:攻擊，e:開啟背包，z:切換武器，x:使用第1項技能，c:使用第2項技能，v:使用第3項技能，因為抽獎系統還沒做好所以有在背包放一點裝備和武器和技能(但很多東西還沒做好可能怪怪的)，點擊裝備和武器和技能可以穿上，技能沒有用我還沒做所以就不用理，現在場上會有小怪，也只有1種，可以去打，會掉錢(錢還沒有用)，然後就沒了，其他東西之後會做(暑假會做)，可以把連結記起來之後玩，喔對了還有你會飛(右下角有三角形可以關掉這個對話框，如果你還沒學會操作，先不要關掉)",10000)
   get("background").focus();
   get("loding").remove();
   moveSystem = setInterval(move, 20);
@@ -553,6 +554,7 @@ function backpack() {
   get("packbackSelectItemName").innerHTML = "";
   get("packbackSelectItemIntroduction").innerHTML = "";
   get("packbackSelectItemDressup").innerHTML = ""
+  get("packbackSelectItemData").innerHTML = "";
   packbackSelectItemi = "";
   SelectEquipment = "";
   SelectEquipmentNum = "";
@@ -578,6 +580,7 @@ function clickInventory(inventoryData) {
   get("packbackSelectItem").style.backgroundImage = `url(${"equipmentSystem/" + inventoryBackpack[inventoryData.target.i].img + ".png"})`;
   get("packbackSelectItemName").innerHTML = inventoryBackpack[inventoryData.target.i].name;
   get("packbackSelectItemIntroduction").innerHTML = inventoryBackpack[inventoryData.target.i].info;
+  get("packbackSelectItemData").innerHTML = "星數:" + inventoryBackpack[inventoryData.target.i].star +"<br>等級:" + inventoryBackpack[inventoryData.target.i].level + "<br>攻擊力:" + inventoryBackpack[inventoryData.target.i].atk + "<br>防禦力:" + inventoryBackpack[inventoryData.target.i].armor;
 }
 function check(type, id, num) {
   if (playerEquipmentSystem[type] != "") {
@@ -588,8 +591,13 @@ function check(type, id, num) {
       get("packbackSelectItem").style.backgroundImage = `url(${"equipmentSystem/" + playerEquipmentSystem[type].img + ".png"})`;
       get("packbackSelectItemName").innerHTML = playerEquipmentSystem[type].name;
       get("packbackSelectItemIntroduction").innerHTML = playerEquipmentSystem[type].info;
-    } else if (type == "food") {
-
+      get("packbackSelectItemData").innerHTML = "星數:" + playerEquipmentSystem[type].star +"<br>等級:" + playerEquipmentSystem[type].level + "<br>攻擊力:" + playerEquipmentSystem[type].atk + "<br>防禦力:" + playerEquipmentSystem[type].armor;
+    } else if (type == "Food") {
+      get("packbackSelectItem").style.backgroundImage = `url(${"playerEquipmentSystem[type][9999]"})`;
+      get("packbackSelectItemDressup").innerHTML = playerEquipmentSystem[type][9999];
+      get("packbackSelectItemName").innerHTML = playerEquipmentSystem[type][9999];
+      get("packbackSelectItemIntroduction").innerHTML = playerEquipmentSystem[type][9999];
+      get("packbackSelectItemData").innerHTML = playerEquipmentSystem[type][9999];
     } else {
       if (num > playerEquipmentSystem[type].length) return;
       get("packbackSelectItemDressup").innerHTML = "卸下";
@@ -599,6 +607,7 @@ function check(type, id, num) {
       get("packbackSelectItem").style.backgroundImage = `url(${"equipmentSystem/" + playerEquipmentSystem[type][num - 1].img + ".png"})`;
       get("packbackSelectItemName").innerHTML = playerEquipmentSystem[type][num - 1].name;
       get("packbackSelectItemIntroduction").innerHTML = playerEquipmentSystem[type][num - 1].info;
+      get("packbackSelectItemData").innerHTML = "星數:" + playerEquipmentSystem[type][num - 1].star +"<br>等級:" + playerEquipmentSystem[type][num - 1].level + "<br>攻擊力:" + playerEquipmentSystem[type][num - 1].atk + "<br>防禦力:" + playerEquipmentSystem[type][num - 1].armor;
     }
   }
 }
@@ -615,7 +624,7 @@ class weapon {
     this.armor = armor;
   }
 }
-var ns = new weapon('新手技能', 'ae', '給新手用的技能', 88, '0007', 50, 1, 1, 0)
+var ns = new weapon('新手技能', 'ae', '給新手用的技能，可以發射火球(開發中)', 88, '0007', 50, 1, 12, 0)
 inventoryBackpack.push(ns)
 inventoryBackpack.push(ns)
 inventoryBackpack.push(ns)
@@ -624,19 +633,29 @@ var nw = new weapon('新手武器', 'af', '給新手使用的武器', 1, "0000",
 inventoryBackpack.push(nw)
 inventoryBackpack.push(nw)
 inventoryBackpack.push(nw)
-var nw = new weapon('新手裝備', 'aa', '給新手使用的裝備', 1, "0001", 80, 3, 1, 1)
+var nw = new weapon('新手裝備', 'aa', '給新手使用的裝備', 1, "0001", 80, 3, 0, 1)
 inventoryBackpack.push(nw)
 inventoryBackpack.push(nw)
-var nw = new weapon('新手裝備', 'ab', '給新手使用的裝備', 1, "0002", 27, 4, 1, 2)
+var nw = new weapon('新手裝備', 'ab', '給新手使用的裝備', 1, "0002", 27, 4, 0, 2)
 inventoryBackpack.push(nw)
 inventoryBackpack.push(nw)
-var nw = new weapon('新手裝備', 'ac', '給新手使用的裝備', 1, "0003", 44, 5, 1, 1)
+var nw = new weapon('新手裝備', 'ac', '給新手使用的裝備', 1, "0003", 44, 5, 0, 1)
 inventoryBackpack.push(nw)
 inventoryBackpack.push(nw)
-var nw = new weapon('新手裝備', 'ad', '給新手使用的裝備', 1, "0004", 99, 6, 1, 1)
+var nw = new weapon('新手裝備', 'ad', '給新手使用的裝備', 1, "0004", 99, 6, 0, 1)
 inventoryBackpack.push(nw)
 inventoryBackpack.push(nw)
-var nw = new weapon('神級裝備', 'ad', '給神使用的裝備', 1, "0008", 99, 6, 1, 20)
+var nw = new weapon('聖劍', 'af', '給大師使用的武器，可附帶5秒燃燒效果(開發中)', 5, "0005", 120, 6, 8, 0)
+inventoryBackpack.push(nw)
+var nw = new weapon('聖者之]書', 'ae', '不知道要講什麼(開發中)', 5, "0006", 999, 12, 0, 0)
+inventoryBackpack.push(nw)
+var nw = new weapon('vu04294j3fu4', 'af', 'm03t/6j3fu4(開發中)', 5, "0008", 99999999999, 12, 0, 0)
+inventoryBackpack.push(nw)
+var nw = new weapon('治療法書', 'ag', '給大師使用的武器，可附帶5秒燃燒效果(開發中)', 5, "0010", 120, 6, 8, 0)
+inventoryBackpack.push(nw)
+var nw = new weapon('治療法書弓箭', 'af', '給大師使用的武器，可附帶5秒燃燒效果(開發中)', 5, "0009", 120, 6, 8, 0)
+inventoryBackpack.push(nw)
+var nw = new weapon('神秘寶箱(開發中)', 'af', '給大師使用的武器，可附帶5秒燃燒效果(開發中)', 5, "0011", 120, 6, 8, 0)
 inventoryBackpack.push(nw)
 function ItemDressup() {
   if (get("packbackSelectItemDressup").innerHTML == "裝備") {
@@ -757,5 +776,5 @@ function openBox(num) {
   }
 }
 function shop() {
-
+  
 }
